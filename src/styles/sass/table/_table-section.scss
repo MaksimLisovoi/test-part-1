@@ -4,6 +4,16 @@
   &__body {
     padding-top: 60px;
   }
+
+  &__btn {
+  }
+
+  &__modal {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+  }
 }
 
 .table-notes {
@@ -36,5 +46,16 @@
 
   &__row--column {
     padding: 20px;
+  }
+}
+
+.form-notes {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__header {
+    text-align: center;
   }
 }
