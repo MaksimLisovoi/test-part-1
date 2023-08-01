@@ -1,0 +1,23 @@
+.table {
+  // .table__body
+
+  &__body {
+    padding-top: 60px;
+  }
+
+  // .table__header
+
+  &__header {
+    background-color: $primary-gray-color;
+    color: $primary-white-color;
+  }
+
+  &__header--column {
+    padding: 20px;
+  }
+
+  // .table__row
+
+  &__row {
+  }
+}
