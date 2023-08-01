@@ -1,8 +1,17 @@
-.table {
-  // .table__body
+.section-table {
+  // .section-table__body
 
   &__body {
     padding-top: 60px;
+  }
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  & tr {
+    margin-bottom: 10px;
   }
 
   // .table__header
@@ -12,12 +21,20 @@
     color: $primary-white-color;
   }
 
+  // .table__header--column
+
   &__header--column {
     padding: 20px;
+    font-size: 18px;
   }
 
   // .table__row
 
   &__row {
+    background-color: $secondary-background-color;
+  }
+
+  &__row--column {
+    padding: 20px;
   }
 }

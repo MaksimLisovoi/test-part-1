@@ -82,13 +82,28 @@ img {
   flex-direction: column;
 }
 
-.table__body {
+.section-table__body {
   padding-top: 60px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table tr {
+  margin-bottom: 10px;
 }
 .table__header {
   background-color: #383838;
   color: #fbf9f7;
 }
 .table__header--column {
+  padding: 20px;
+  font-size: 18px;
+}
+.table__row {
+  background-color: #f5f4fa;
+}
+.table__row--column {
   padding: 20px;
 }/*# sourceMappingURL=main.css.map */
