@@ -82,28 +82,27 @@ img {
   flex-direction: column;
 }
 
-.section-table__body {
+.section-notes__body {
   padding-top: 60px;
 }
 
-.table {
+.table-notes {
   width: 100%;
-  border-collapse: collapse;
 }
-.table tr {
+.table-notes tr {
   margin-bottom: 10px;
 }
-.table__header {
+.table-notes__header {
   background-color: #383838;
   color: #fbf9f7;
 }
-.table__header--column {
+.table-notes__header--column {
   padding: 20px;
   font-size: 18px;
 }
-.table__row {
+.table-notes__row {
   background-color: #f5f4fa;
 }
-.table__row--column {
+.table-notes__row--column {
   padding: 20px;
 }/*# sourceMappingURL=main.css.map */

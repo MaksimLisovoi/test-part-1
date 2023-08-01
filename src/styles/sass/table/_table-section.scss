@@ -1,4 +1,4 @@
-.section-table {
+.section-notes {
   // .section-table__body
 
   &__body {
@@ -6,9 +6,9 @@
   }
 }
 
-.table {
+.table-notes {
   width: 100%;
-  border-collapse: collapse;
+  // border-collapse: collapse;
 
   & tr {
     margin-bottom: 10px;

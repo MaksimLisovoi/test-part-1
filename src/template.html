@@ -8,51 +8,46 @@
     <div id="root">
       <div class="wrapper">
         <main class="page">
-          <div class="section-table">
-            <div class="section-table__container container">
-              <div class="section-table__body">
-                <table class="table">
-                  <tr class="table__header">
-                    <td class="table__header--column">&nbsp;</td>
-                    <td class="table__header--column">Name</td>
-                    <td class="table__header--column">Created</td>
-                    <td class="table__header--column">Category</td>
-                    <td class="table__header--column">Content</td>
-                    <td class="table__header--column">Dates</td>
-                  </tr>
-                  <tr class="table__row">
-                    <td class="table__row--column">Breed</td>
-                    <td class="table__row--column">Jack Russell</td>
-                    <td class="table__row--column">Poodle</td>
-                    <td class="table__row--column">Streetdog</td>
-                    <td class="table__row--column">Cocker Spaniel</td>
-                    <td class="table__row--column">Cocker Spaniel</td>
-                  </tr>
-                  <tr class="table__row">
-                    <td class="table__row--column">Breed</td>
-                    <td class="table__row--column">Jack Russell</td>
-                    <td class="table__row--column">Poodle</td>
-                    <td class="table__row--column">Streetdog</td>
-                    <td class="table__row--column">Cocker Spaniel</td>
-                    <td class="table__row--column">Cocker Spaniel</td>
-                  </tr>
-                  <tr class="table__row">
-                    <td class="table__row--column">Breed</td>
-                    <td class="table__row--column">Jack Russell</td>
-                    <td class="table__row--column">Poodle</td>
-                    <td class="table__row--column">Streetdog</td>
-                    <td class="table__row--column">Cocker Spaniel</td>
-                    <td class="table__row--column">Cocker Spaniel</td>
-                  </tr>
-                  <tr class="table__row">
-                    <td class="table__row--column">Breed</td>
-                    <td class="table__row--column">Jack Russell</td>
-                    <td class="table__row--column">Poodle</td>
-                    <td class="table__row--column">Streetdog</td>
-                    <td class="table__row--column">Cocker Spaniel</td>
-                    <td class="table__row--column">Cocker Spaniel</td>
+          <div class="section-notes">
+            <div class="section-notes__container container">
+              <div class="section-notes__body">
+                <table class="section-notes__table table-notes">
+                  <tr class="table-notes__header">
+                    <td class="table-notes__header--column">&nbsp;</td>
+                    <td class="table-notes__header--column">Name</td>
+                    <td class="table-notes__header--column">Created</td>
+                    <td class="table-notes__header--column">Category</td>
+                    <td class="table-notes__header--column">Content</td>
+                    <td class="table-notes__header--column">Dates</td>
                   </tr>
                 </table>
+
+                <button class="section-notes__btn">Create Note</button>
+
+                <div class="section-notes__modal">
+                  <form class="section-notes__form form-notes">
+                    <h2>Create yout own note</h2>
+
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" />
+
+                    <label for="category">Category</label>
+                    <select id="category" name="category">
+                      <option value="Task">Task</option>
+                      <option value="Random Thought">Random Thought</option>
+                      <option value="Idea" selected>Idea</option>
+                      <option value="Quote">Quote</option>
+                    </select>
+
+                    <label for="content">Content</label>
+                    <textarea
+                      id="content"
+                      name="content"
+                      rows="5"
+                      placeholder="Enter your message here..."
+                    ></textarea>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
