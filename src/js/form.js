@@ -2,6 +2,7 @@ import refs from './refs';
 import { nanoid } from 'nanoid';
 import { notes } from './dataForApp/notes';
 import { refreshTable } from './templates/tableRow';
+import { archiveTable } from './templates/archivedTable';
 
 refs.notesForm.addEventListener('submit', submitHandler);
 
@@ -34,8 +35,8 @@ function submitHandler(e) {
   try {
     notes.push(dataObject);
     refreshTable();
+    archiveTable();
   } catch (error) {
     console.log(error);
-    error.message();
   }
 }

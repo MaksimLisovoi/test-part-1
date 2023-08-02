@@ -12,7 +12,25 @@ export const notes = [
     icon: '',
     name: 'The theory of evolution',
     created: 'May 27, 2023',
+    category: 'Idea',
+    content: 'Power doesn`t dfgdfgdg',
+  },
+  {
+    id: 3,
+    icon: '',
+    name: 'The theory of evolution',
+    created: 'May 27, 2023',
+    category: 'Random Thought',
+    content: 'Power doesn`t dfgdfgdg',
+  },
+  {
+    id: 4,
+    icon: '',
+    name: 'The theory of evolution',
+    created: 'May 27, 2023',
     category: 'Random Thought',
     content: 'Power doesn`t dfgdfgdg',
   },
 ];
+
+export const archiveNotes = [];

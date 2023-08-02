@@ -9,7 +9,7 @@ const openModal = () => {
 
 const closeModal = () => {
   notesModalOverlay.classList.add('is-hidden');
-  document.removeEventListener('keydown', e => escapeModalHandler(e));
+  document.removeEventListener('keydown', e => escapeModalHandler);
 };
 
 const escapeModalHandler = e => {
