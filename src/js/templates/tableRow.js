@@ -1,11 +1,9 @@
 import { notes } from '../dataForApp/notes';
+import refs from '../refs';
 
-console.log(notes);
-
-const table = document.querySelector('.table-notes');
 const tableRowMarkup = createTableRow(notes);
 
-table.insertAdjacentHTML('beforeend', tableRowMarkup);
+refs.table.insertAdjacentHTML('beforeend', tableRowMarkup);
 
 function createTableRow(notes) {
   if (!notes) {

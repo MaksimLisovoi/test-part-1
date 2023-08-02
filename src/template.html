@@ -10,8 +10,8 @@
         <main class="page">
           <div class="section-notes">
             <div class="section-notes__container container">
-              <div class="section-notes__body">
-                <table class="section-notes__table table-notes">
+              <div class="section-notes__body js-section-notes__body">
+                <table class="section-notes__table table-notes js-table-notes">
                   <tr class="table-notes__header">
                     <td class="table-notes__header--column">&nbsp;</td>
                     <td class="table-notes__header--column">Name</td>
@@ -22,31 +22,54 @@
                   </tr>
                 </table>
 
-                <button class="section-notes__btn">Create Note</button>
+                <button
+                  type="button"
+                  data-action="open-notes-modal"
+                  class="section-notes__btn js-notes-modal__btn"
+                >
+                  Create Note
+                </button>
+                <div class="notes-modal__overlay is-hidden js-notes-modal__overlay">
+                  <div class="section-notes__modal notes-modal js-notes-modal">
+                    <div class="notes-modal__content js-notes-modal__content">
+                      <form class="section-notes__form form-notes js-form-notes">
+                        <h2 class="form-notes__header">Create your own note</h2>
 
-                <div class="section-notes__modal">
-                  <form class="section-notes__form form-notes">
-                    <h2 class="form-notes__header">Create your own note</h2>
+                        <label for="name">Name</label>
+                        <input
+                          placeholder="Enter note name here..."
+                          class="form-notes__input"
+                          type="text"
+                          name="name"
+                          id="name"
+                        />
 
-                    <label for="name">Name</label>
-                    <input type="text" name="name" id="name" />
+                        <label for="category">Category</label>
+                        <select class="form-notes__input" id="category" name="category">
+                          <option value="Task">Task</option>
+                          <option value="Random Thought">Random Thought</option>
+                          <option value="Idea" selected>Idea</option>
+                          <option value="Quote">Quote</option>
+                        </select>
 
-                    <label for="category">Category</label>
-                    <select id="category" name="category">
-                      <option value="Task">Task</option>
-                      <option value="Random Thought">Random Thought</option>
-                      <option value="Idea" selected>Idea</option>
-                      <option value="Quote">Quote</option>
-                    </select>
+                        <label for="content">Content</label>
+                        <textarea
+                          class="form-notes__input"
+                          id="content"
+                          name="content"
+                          rows="8"
+                          placeholder="Enter your message here..."
+                        ></textarea>
 
-                    <label for="content">Content</label>
-                    <textarea
-                      id="content"
-                      name="content"
-                      rows="5"
-                      placeholder="Enter your message here..."
-                    ></textarea>
-                  </form>
+                        <button class="section-notes__btn" type="submit">Add Note</button>
+                      </form>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="notes-modal__btn js-notes-modal__btn-close"
+                    data-action="close-notes-modal"
+                  ></button>
                 </div>
               </div>
             </div>

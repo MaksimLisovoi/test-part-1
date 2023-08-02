@@ -6,7 +6,6 @@ export const notes = [
     created: 'May 21, 2023',
     category: 'Task',
     content: 'Tomatoes, bread',
-    dates: [],
   },
   {
     id: 2,
@@ -15,6 +14,5 @@ export const notes = [
     created: 'May 27, 2023',
     category: 'Random Thought',
     content: 'Power doesn`t dfgdfgdg',
-    dates: [],
   },
 ];
