@@ -108,7 +108,7 @@ img {
   background-color: #383838;
   color: #fbf9f7;
 }
-.table-notes__header--column {
+.table-notes__header th {
   padding: 20px;
   font-size: 18px;
 }
@@ -117,6 +117,18 @@ img {
 }
 .table-notes__row--column {
   padding: 20px;
+}
+.table-notes__btn-block button {
+  padding: 12px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  transition: background-color cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+  font-size: 16px;
+  font-weight: 400;
+}
+.table-notes__btn-block button:hover {
+  background-color: #000000;
+  color: #fbf9f7;
 }
 
 .section-notes__modal {

@@ -21,27 +21,19 @@
 
 .table-notes {
   width: 100%;
-  // border-collapse: collapse;
 
   & tr {
     margin-bottom: 10px;
   }
 
-  // .table__header
-
   &__header {
     background-color: $primary-gray-color;
     color: $primary-white-color;
   }
-
-  // .table__header--column
-
-  &__header--column {
+  &__header th {
     padding: 20px;
     font-size: 18px;
   }
-
-  // .table__row
 
   &__row {
     background-color: $secondary-background-color;
@@ -49,5 +41,21 @@
 
   &__row--column {
     padding: 20px;
+  }
+
+  &__btn-block button {
+    padding: 12px;
+
+    border: 1px solid $primary-black-color;
+    border-radius: 5px;
+    transition: background-color $animation-duration $timing-function;
+
+    font-size: 16px;
+    font-weight: 400;
+
+    &:hover {
+      background-color: $primary-black-color;
+      color: $primary-white-color;
+    }
   }
 }

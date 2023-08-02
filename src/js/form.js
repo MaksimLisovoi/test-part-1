@@ -1,10 +1,13 @@
 import refs from './refs';
 import { nanoid } from 'nanoid';
 import { notes } from './dataForApp/notes';
+import { refreshTable } from './templates/tableRow';
 
 refs.notesForm.addEventListener('submit', submitHandler);
 
 const datesRegex = /\d{2}([\/.-])\d{2}\1\d{4}/g;
+
+export const newNotes = [...notes];
 
 function submitHandler(e) {
   e.preventDefault();
@@ -28,16 +31,11 @@ function submitHandler(e) {
 
   const dataObject = Object.fromEntries(formData.entries());
 
-  console.log(dataObject);
-
-  notes.push(dataObject);
-
-  console.log(notes);
-
-  //   try {
-  //     notes.push(dataObject);
-  //   } catch (error) {
-  //     console.log(error);
-  //     error.message();
-  //   }
+  try {
+    notes.push(dataObject);
+    refreshTable();
+  } catch (error) {
+    console.log(error);
+    error.message();
+  }
 }
