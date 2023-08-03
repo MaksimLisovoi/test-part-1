@@ -3,10 +3,6 @@ import refs from '../refs';
 
 export function archiveTable() {
   const notesAmount = notes.reduce((acc, note) => {
-    // console.log(acc);
-    // console.log(note.category);
-    console.log(acc?.active?.[note.category]);
-
     return {
       ...acc,
       active: note.isArchived
@@ -19,10 +15,6 @@ export function archiveTable() {
   }, {});
 
   const allCategories = { ...notesAmount.active, ...notesAmount.isArchived };
-
-  console.log(Object.keys(allCategories));
-
-  console.log(notes);
 
   refs.tableSummary.innerHTML = Object.keys(allCategories)
     .map(category => {

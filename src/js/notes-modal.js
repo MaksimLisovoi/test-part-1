@@ -2,12 +2,12 @@ import refs from './refs';
 
 const { notesModalOverlay, notesModalOpenBtn, notesModalCloseBtn } = refs;
 
-const openModal = () => {
+export const openModal = () => {
   notesModalOverlay.classList.remove('is-hidden');
   document.addEventListener('keydown', escapeModalHandler);
 };
 
-const closeModal = () => {
+export const closeModal = () => {
   notesModalOverlay.classList.add('is-hidden');
   document.removeEventListener('keydown', escapeModalHandler);
 };

@@ -2,11 +2,12 @@ import refs from '../refs';
 import { refreshTable } from '../templates/tableRow';
 import { archiveTable } from '../templates/archivedTable';
 import { notes, archiveNotes } from '../dataForApp/notes';
+import { openModal } from '../notes-modal';
 
 const currentNote = id => notes.indexOf(notes.find(note => String(note.id) === id));
 
 function eventTargetCheck(e) {
-  if (e.target.className === 'item') {
+  if (e.target.className === 'js-table-btn-update') {
     updateItem(e);
     refreshTable();
   } else if (e.target.closest('.js-table-btn-del')) {
@@ -29,18 +30,20 @@ export function deleteNote(e) {
 function archiveNote(e) {
   const id = e.target.id;
   console.log(notes[currentNote(id)]);
-  console.log(id);
 
-  notes[currentNote(id)].isArchived = true;
-  // const deletedNote = deleteNote(e);
-  // archiveNotes.push(...deletedNote);
-  // console.log(archiveNotes);
+  notes[currentNote(id)].isArchived = !notes[currentNote(id)].isArchived;
 }
 
-// function updateItem(e) {
-//   id = e.target.parentNode.childNodes[1].innerHTML;
+function updateItem(e) {
+  const id = e.target.id;
 
-//   listArr[arrPosition(id)] = update;
-// }
+  const clickedNote = notes[currentNote(id)];
+
+  refs.notesForm[0].value = clickedNote.name;
+  refs.notesForm[1].value = clickedNote.category;
+  refs.notesForm[2].value = clickedNote.content;
+  refs.notesForm.id = currentNote(id);
+  openModal();
+}
 
 refs.notesTableBody.addEventListener('click', eventTargetCheck, false);

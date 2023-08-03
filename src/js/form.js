@@ -3,12 +3,10 @@ import { nanoid } from 'nanoid';
 import { notes } from './dataForApp/notes';
 import { refreshTable } from './templates/tableRow';
 import { archiveTable } from './templates/archivedTable';
+import { datesRegex } from './regexes';
+import { closeModal } from './notes-modal';
 
 refs.notesForm.addEventListener('submit', submitHandler);
-
-const datesRegex = /\d{2}([\/.-])\d{2}\1\d{4}/g;
-
-export const newNotes = [...notes];
 
 function submitHandler(e) {
   e.preventDefault();
@@ -32,10 +30,22 @@ function submitHandler(e) {
   const dataObject = Object.fromEntries(formData.entries());
   dataObject.isArchived = false;
 
+  const currentNote = notes[refs.notesForm.id];
+
   try {
+    if (currentNote) {
+      currentNote.name = dataObject.name;
+      currentNote.category = dataObject.category;
+      currentNote.content = dataObject.content;
+      refreshTable();
+      archiveTable();
+      closeModal();
+      return;
+    }
     notes.push(dataObject);
     refreshTable();
     archiveTable();
+    closeModal();
   } catch (error) {
     console.log(error);
   }

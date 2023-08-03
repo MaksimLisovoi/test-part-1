@@ -116,6 +116,9 @@ img {
   padding: 20px;
   font-size: 18px;
 }
+.table-notes__icon-row {
+  width: 30px;
+}
 .table-notes__row {
   background-color: #f5f4fa;
 }
