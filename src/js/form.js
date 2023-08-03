@@ -24,13 +24,13 @@ function submitHandler(e) {
 
   formData.append('created', createdDate);
   formData.append('id', nanoid());
-  //   formData.append('dates', content.match(datesRegex));
 
   content.match(datesRegex)
     ? formData.append('dates', content.match(datesRegex))
     : formData.append('dates', '');
 
   const dataObject = Object.fromEntries(formData.entries());
+  dataObject.isArchived = false;
 
   try {
     notes.push(dataObject);

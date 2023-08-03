@@ -3,6 +3,8 @@ import { refreshTable } from '../templates/tableRow';
 import { archiveTable } from '../templates/archivedTable';
 import { notes, archiveNotes } from '../dataForApp/notes';
 
+const currentNote = id => notes.indexOf(notes.find(note => String(note.id) === id));
+
 function eventTargetCheck(e) {
   if (e.target.className === 'item') {
     updateItem(e);
@@ -14,20 +16,25 @@ function eventTargetCheck(e) {
   } else if (e.target.closest('.js-table-btn-archive')) {
     archiveNote(e);
     refreshTable();
-    archiveTable;
+    archiveTable();
   }
 }
 
 export function deleteNote(e) {
   const id = e.target.id;
-  const note = notes.splice(notes.indexOf(notes.find(note => note.id === Number(id))), 1);
+  const note = notes.splice(currentNote(id), 1);
   return note;
 }
 
 function archiveNote(e) {
-  const deletedNote = deleteNote(e);
-  archiveNotes.push(...deletedNote);
-  console.log(archiveNotes);
+  const id = e.target.id;
+  console.log(notes[currentNote(id)]);
+  console.log(id);
+
+  notes[currentNote(id)].isArchived = true;
+  // const deletedNote = deleteNote(e);
+  // archiveNotes.push(...deletedNote);
+  // console.log(archiveNotes);
 }
 
 // function updateItem(e) {
