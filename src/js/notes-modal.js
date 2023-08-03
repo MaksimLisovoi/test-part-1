@@ -4,12 +4,12 @@ const { notesModalOverlay, notesModalOpenBtn, notesModalCloseBtn } = refs;
 
 const openModal = () => {
   notesModalOverlay.classList.remove('is-hidden');
-  document.addEventListener('keydown', e => escapeModalHandler(e));
+  document.addEventListener('keydown', escapeModalHandler);
 };
 
 const closeModal = () => {
   notesModalOverlay.classList.add('is-hidden');
-  document.removeEventListener('keydown', e => escapeModalHandler);
+  document.removeEventListener('keydown', escapeModalHandler);
 };
 
 const escapeModalHandler = e => {
@@ -26,6 +26,6 @@ const clickModalHandler = e => {
   }
 };
 
-notesModalOverlay.addEventListener('click', e => clickModalHandler(e));
+notesModalOverlay.addEventListener('click', clickModalHandler);
 
 notesModalOpenBtn.addEventListener('click', openModal);
