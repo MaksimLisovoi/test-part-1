@@ -2,6 +2,9 @@ import { notes, archiveNotes } from '../dataForApp/notes';
 import refs from '../refs';
 
 export function archiveTable() {
+  if (!notes) {
+    return;
+  }
   const notesAmount = notes.reduce((acc, note) => {
     return {
       ...acc,

@@ -1,7 +1,7 @@
 import refs from './refs';
 import { nanoid } from 'nanoid';
 import { notes } from './dataForApp/notes';
-import { refreshTable } from './templates/tableRow';
+import { refreshTable } from './templates/commonTable';
 import { archiveTable } from './templates/archivedTable';
 import { datesRegex } from './regexes';
 import { closeModal } from './notes-modal';
@@ -32,20 +32,23 @@ function submitHandler(e) {
 
   const currentNote = notes[refs.notesForm.id];
 
+  const refreshPage = () => {
+    refreshTable();
+    archiveTable();
+    closeModal();
+  };
+
   try {
     if (currentNote) {
       currentNote.name = dataObject.name;
       currentNote.category = dataObject.category;
       currentNote.content = dataObject.content;
-      refreshTable();
-      archiveTable();
-      closeModal();
+
+      refreshPage();
       return;
     }
     notes.push(dataObject);
-    refreshTable();
-    archiveTable();
-    closeModal();
+    refreshPage();
   } catch (error) {
     console.log(error);
   }

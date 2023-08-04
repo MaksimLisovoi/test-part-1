@@ -122,6 +122,11 @@ img {
 .table-notes__row {
   background-color: #f5f4fa;
 }
+.table-notes__row:hover {
+  cursor: pointer;
+  background-color: #e6e1db;
+  transition: background-color cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+}
 .table-notes__row.is-archived {
   display: none;
 }
@@ -139,11 +144,13 @@ img {
   fill: #868483;
   transform: scale(1.12);
 }
+.table-notes__btn-block {
+  display: flex;
+  justify-content: center;
+}
 .table-notes__btn-block button {
   padding: 8px;
-  transition: background-color cubic-bezier(0.4, 0, 0.2, 1) 250ms;
-  font-size: 16px;
-  font-weight: 400;
+  transition: transform cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 .table-notes__btn-block button:hover {
   transform: scale(1.12);
@@ -151,6 +158,17 @@ img {
 
 .table-summary {
   margin-top: 30px;
+}
+
+.archive-main-btn:hover {
+  transform: scale(1.12);
+  transition: transform cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+}
+.archive-main-btn__icon {
+  fill: #e6e1db;
+}
+.archive-main-btn.is-clicked .archive-main-btn__icon {
+  fill: #e7dab1;
 }
 
 .section-notes__modal {
@@ -230,6 +248,10 @@ img {
 }
 .form-notes label {
   margin-bottom: 12px;
+}
+.form-notes select.decorated option:hover {
+  background-color: #e6e1db;
+  transition: background-color cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 .form-notes__input {
   padding: 16px;

@@ -88,6 +88,14 @@
   & label {
     margin-bottom: 12px;
   }
+  & select.decorated {
+    & option {
+      &:hover {
+        background-color: $gray-background-color;
+        transition: background-color $animation-duration $timing-function;
+      }
+    }
+  }
 
   &__input {
     padding: 16px;

@@ -1,22 +1,24 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 module.exports = {
-  mode: "none",
+  mode: 'none',
   entry: {
-    main: path.resolve(__dirname, "./src/index.js"),
+    main: path.resolve(__dirname, './src/index.js'),
   },
 
   output: {
-    path: path.resolve(__dirname, "./dist"),
-    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, './dist'),
+    filename: '[name].bundle.js',
   },
 
   plugins: [
+    new SpriteLoaderPlugin(),
     new HtmlWebpackPlugin({
-      title: "webpack Boilerplate",
-      template: path.resolve(__dirname, "./src/template.html"), // template file
-      filename: "index.html", // output file
+      title: 'Test task radency part 1',
+      template: path.resolve(__dirname, './src/template.html'), // template file
+      filename: 'index.html', // output file
     }),
     new CleanWebpackPlugin(),
   ],
@@ -27,48 +29,44 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ["babel-loader"],
+        use: ['babel-loader'],
       },
       // Images
       {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-        type: "asset/resource",
+        type: 'asset/resource',
       },
       // Fonts and SVGs
       {
         test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
-        type: "asset/inline",
+        type: 'asset/inline',
       },
       // CSS, PostCSS, and Sass
       {
         test: /\.(scss|css)$/,
-        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+      },
+      //SVG
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
+        options: {
+          attributes: {
+            list: [
+              {
+                tag: 'use',
+                attribute: 'xlink:href',
+                type: 'src',
+              },
+            ],
+          },
+        },
+      },
+
+      {
+        test: /\.svg$/,
+        use: 'file-loader',
       },
     ],
   },
 };
-
-// module.exports = {
-//   mode: "development",
-//   devtool: "inline-source-map",
-//   entry: "./app.ts",
-//   output: {
-//     filename: "bundle.js",
-//   },
-//   resolve: {
-//     // Add `.ts` and `.tsx` as a resolvable extension.
-//     extensions: [".ts", ".tsx", ".js"],
-//     // Add support for TypeScripts fully qualified ESM imports.
-//     extensionAlias: {
-//       ".js": [".js", ".ts"],
-//       ".cjs": [".cjs", ".cts"],
-//       ".mjs": [".mjs", ".mts"],
-//     },
-//   },
-//   module: {
-//     rules: [
-//       // all files with a `.ts`, `.cts`, `.mts` or `.tsx` extension will be handled by `ts-loader`
-//       { test: /\.([cm]?ts|tsx)$/, loader: "ts-loader" },
-//     ],
-//   },
-// };
