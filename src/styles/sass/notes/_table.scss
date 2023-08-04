@@ -1,0 +1,83 @@
+.table-notes {
+  width: 100%;
+
+  & tr {
+    margin-bottom: 10px;
+  }
+
+  &__header {
+    background-color: $primary-gray-color;
+    color: $primary-white-color;
+  }
+  &__header th {
+    padding: 20px;
+    font-size: 18px;
+  }
+
+  &__icon-row {
+    width: 30px;
+  }
+
+  &__row {
+    background-color: $secondary-background-color;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $gray-background-color;
+      transition: background-color $animation-duration $timing-function;
+    }
+
+    &.is-archived {
+      display: none;
+    }
+  }
+
+  &__row--column {
+    padding: 20px;
+  }
+
+  &__btn-icon {
+    pointer-events: none;
+    width: 26px;
+    height: 26px;
+    fill: $primary-gray-color;
+    transition: fill $animation-duration $timing-function;
+
+    &:hover {
+      fill: $secondary-text-color;
+      transform: scale(1.12);
+    }
+  }
+  &__btn-block {
+    display: flex;
+    justify-content: center;
+  }
+  &__btn-block button {
+    padding: 8px;
+    transition: transform $animation-duration $timing-function;
+
+    &:hover {
+      transform: scale(1.12);
+    }
+  }
+}
+
+.table-summary {
+  margin-top: 30px;
+}
+
+.archive-main-btn {
+  &:hover {
+    transform: scale(1.12);
+    transition: transform $animation-duration $timing-function;
+  }
+  &__icon {
+    fill: $gray-background-color;
+  }
+
+  &.is-clicked {
+    .archive-main-btn__icon {
+      fill: $accent-color;
+    }
+  }
+}
