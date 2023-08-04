@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+
 module.exports = {
   mode: 'none',
   entry: {
@@ -14,7 +14,6 @@ module.exports = {
   },
 
   plugins: [
-    new SpriteLoaderPlugin(),
     new HtmlWebpackPlugin({
       title: 'Test task radency part 1',
       template: path.resolve(__dirname, './src/template.html'), // template file
@@ -45,27 +44,6 @@ module.exports = {
       {
         test: /\.(scss|css)$/,
         use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
-      },
-      //SVG
-      {
-        test: /\.html$/i,
-        loader: 'html-loader',
-        options: {
-          attributes: {
-            list: [
-              {
-                tag: 'use',
-                attribute: 'xlink:href',
-                type: 'src',
-              },
-            ],
-          },
-        },
-      },
-
-      {
-        test: /\.svg$/,
-        use: 'file-loader',
       },
     ],
   },
