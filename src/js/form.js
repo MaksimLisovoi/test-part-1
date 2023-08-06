@@ -23,8 +23,6 @@ function submitHandler(e) {
   formData.append('created', createdDate);
   formData.append('id', nanoid());
 
-  console.log(content.match(datesRegex));
-
   content.match(datesRegex)
     ? formData.append('dates', content.match(datesRegex))
     : formData.append('dates', '');
